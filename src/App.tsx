@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
+import { BoltBadge } from './components/BoltBadge';
 import { Dashboard } from './pages/Dashboard';
 import { Incidents } from './pages/Incidents';
 import { Resources } from './pages/Resources';
@@ -18,7 +19,12 @@ const AppContent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('dashboard');
 
   if (!user) {
-    return <Login />;
+    return (
+      <>
+        <Login />
+        <BoltBadge />
+      </>
+    );
   }
 
   return (
@@ -35,6 +41,7 @@ const AppContent: React.FC = () => {
           {currentPage === 'settings' && <Settings />}
         </main>
       </div>
+      <BoltBadge />
     </div>
   );
 };
