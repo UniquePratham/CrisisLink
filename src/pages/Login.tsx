@@ -68,7 +68,7 @@ export const Login: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-crisis-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-3xl shadow-2xl transform group-hover:scale-105 transition-all duration-500">
                 <img 
-                  src="../../public/CrisisLink.png" 
+                  src="CrisisLink.png" 
                   alt="CrisisLink Logo" 
                   className="h-48 w-48 object-contain filter brightness-0 invert"
                 />
