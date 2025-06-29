@@ -47,7 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange }) =
                 <div className="absolute inset-0 bg-crisis-500/30 rounded-xl"></div>
                 <div className="relative w-14 h-14 bg-blue-700 rounded-xl flex items-center justify-center p-1 ">
                   <img 
-                    src="../../public/CrisisLink.png" 
+                    src="../public/CrisisLink.png" 
                     alt="CrisisLink Logo" 
                     className="h-24 w-28 object-contain"
                     style={{ filter: 'brightness(0) invert(1)' }}
