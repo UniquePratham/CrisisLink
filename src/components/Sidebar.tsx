@@ -7,7 +7,8 @@ import {
   BarChart3, 
   Settings,
   Radio,
-  Zap
+  Zap,
+  Shield
 } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -45,12 +46,23 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange }) =
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <div className="absolute inset-0 bg-crisis-500/30 rounded-xl"></div>
-                <div className="relative w-14 h-14 bg-blue-700 rounded-xl flex items-center justify-center p-1 ">
+                <div className="relative w-14 h-14 bg-blue-700 rounded-xl flex items-center justify-center p-1">
+                  {/* Use Shield icon as fallback if image fails to load */}
                   <img 
-                    src="../public/CrisisLink.png" 
+                    src="/CrisisLink.png" 
                     alt="CrisisLink Logo" 
                     className="h-24 w-28 object-contain"
                     style={{ filter: 'brightness(0) invert(1)' }}
+                    onError={(e) => {
+                      // Hide the image and show fallback icon if loading fails
+                      e.currentTarget.style.display = 'none';
+                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'block';
+                    }}
+                  />
+                  <Shield 
+                    className="h-8 w-8 text-white hidden" 
+                    style={{ display: 'none' }}
                   />
                 </div>
               </div>
